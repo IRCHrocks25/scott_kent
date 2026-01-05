@@ -1,0 +1,85 @@
+{% if speaking.show_section %}
+<section class="py-24 md:py-28 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900">
+    <div class="max-w-6xl mx-auto px-6">
+
+        <!-- Header -->
+        <div class="text-center mb-12 md:mb-14">
+            <p class="text-xs font-semibold tracking-[0.25em] uppercase text-slate-400 mb-3">
+                Speaking &amp; Transformation
+            </p>
+            <h2 class="text-3xl md:text-4xl font-semibold text-slate-50 mb-4 leading-tight">
+                {{ speaking.headline }}
+            </h2>
+            {% if speaking.body_text %}
+            <p class="text-base md:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                {{ speaking.body_text }}
+            </p>
+            {% endif %}
+        </div>
+
+        <!-- Main card -->
+        <div class="rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-md
+                    shadow-[0_26px_90px_rgba(15,23,42,0.9)] px-6 py-7 md:px-10 md:py-9 mb-10 md:mb-12">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+
+                <!-- Image / stage visual -->
+                <div class="relative">
+                    <div class="rounded-3xl overflow-hidden bg-slate-900/60 border border-white/10">
+                        {% if speaking.image %}
+                            <img src="{{ speaking.image.url }}" alt="Speaking"
+                                 class="w-full h-full object-cover">
+                        {% else %}
+                            <div class="h-64 md:h-72 flex items-center justify-center">
+                                <i class="fas fa-microphone text-4xl text-slate-500/70"></i>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- soft spotlight glow -->
+                    <div class="pointer-events-none absolute -inset-6 rounded-[32px]
+                                bg-gradient-to-tr from-cyan-400/15 via-sky-400/10 to-amber-300/10
+                                blur-3xl -z-10"></div>
+                </div>
+
+                <!-- Content / promise -->
+                <div class="space-y-5 text-left">
+                    <p class="text-sm font-semibold tracking-[0.16em] uppercase text-slate-300">
+                        More than speakers, catalysts for change
+                    </p>
+                    <p class="text-base md:text-lg text-slate-100 leading-relaxed">
+                        Whether it's a room of founders or a leadership offsite, we bring clarity, stories
+                        from the trenches, and practical systems thinking your audience can act on the
+                        moment they leave the room.
+                    </p>
+                    <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                        Organizers receive a complete speaker kit with talk outlines, audience outcomes,
+                        and promotional assets—so you can showcase the event with ease.
+                    </p>
+
+                    <div class="pt-3">
+                        <a href="{{ speaking.cta_url }}"
+                           class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full font-semibold
+                                  text-slate-950 bg-slate-50
+                                  shadow-[0_0_26px_rgba(248,250,252,0.25)]
+                                  hover:bg-white hover:shadow-[0_0_36px_rgba(248,250,252,0.45)]
+                                  hover:scale-[1.02] active:scale-[0.99]
+                                  transition-all duration-300">
+                            <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-900/5">
+                                <i class="fas fa-download text-xs"></i>
+                            </span>
+                            <span>{{ speaking.cta_label|cut:"👉" }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tiny reassurance line -->
+        <p class="text-center text-xs md:text-sm text-slate-400 max-w-2xl mx-auto">
+            Perfect for keynotes, founder summits, leadership retreats, and growth-focused events that
+            want more than motivation—they want a roadmap.
+        </p>
+
+    </div>
+</section>
+{% endif %}

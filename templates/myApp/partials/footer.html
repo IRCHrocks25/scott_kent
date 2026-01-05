@@ -1,0 +1,107 @@
+<footer class="bg-slate-950 text-slate-300 pt-20 pb-14">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Top Accent Line -->
+        <div class="flex items-center justify-between border-b border-white/10 pb-6 mb-12">
+            <p class="text-xs tracking-[0.25em] uppercase text-slate-400">
+                Scott & Shannon Kent
+            </p>
+
+            <div class="hidden md:flex items-center gap-2">
+                <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                <p class="text-xs text-slate-400">
+                    Independent. Founder-led. Systems-first.
+                </p>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14">
+
+            <!-- Brand block -->
+            <div>
+                <h4 class="text-white text-xl font-semibold mb-4">
+                    {{ footer.brand_mission_title|default:"The work behind the freedom" }}
+                </h4>
+                <p class="text-slate-400 leading-relaxed max-w-sm">
+                    {{ footer.brand_mission|default:"We design systems that return time, increase profit, and remove friction — so founders can lead by design, not by default." }}
+                </p>
+            </div>
+
+            <!-- Links -->
+            <div>
+                <h4 class="text-white text-sm font-semibold tracking-wider uppercase mb-4">
+                    Explore
+                </h4>
+
+                <ul class="space-y-2">
+                    {% for link in footer.links.all %}
+                        <li>
+                            <a href="{{ link.url }}"
+                               class="text-slate-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all">
+                                <i class="fa-solid fa-chevron-right text-[10px] opacity-60"></i>
+                                {{ link.label }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="text-white text-sm font-semibold tracking-wider uppercase mb-4">
+                    Contact
+                </h4>
+
+                {% if footer.address %}
+                <p class="text-slate-400 mb-3">
+                    {{ footer.address|linebreaks }}
+                </p>
+                {% endif %}
+
+                {% if footer.email %}
+                <p class="mb-2">
+                    <a href="mailto:{{ footer.email }}" class="text-slate-300 hover:text-white transition-colors">
+                        {{ footer.email }}
+                    </a>
+                </p>
+                {% endif %}
+
+                {% if footer.phone %}
+                <p>
+                    <a href="tel:{{ footer.phone }}" class="text-slate-300 hover:text-white transition-colors">
+                        {{ footer.phone }}
+                    </a>
+                </p>
+                {% endif %}
+
+                <!-- Social chips -->
+                <div class="flex gap-3 mt-5">
+                    {% for social in footer.social_links.all %}
+                        <a href="{{ social.url }}"
+                           target="_blank"
+                           class="px-4 py-2 rounded-full border border-white/10
+                                  hover:border-white/20 hover:bg-white/5
+                                  text-sm transition-all">
+                            <i class="{{ social.icon }}"></i>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom strip -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10">
+
+            <p class="text-xs text-slate-500">
+                {{ footer.copyright_text|default:"© 2026 Scott & Shannon Kent. All rights reserved." }}
+            </p>
+
+            <p class="text-xs text-slate-500">
+                Systems create freedom. Guesswork does not.
+            </p>
+
+        </div>
+
+    </div>
+</footer>

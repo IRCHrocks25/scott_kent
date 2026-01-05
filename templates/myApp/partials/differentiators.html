@@ -1,0 +1,65 @@
+{% if differentiators %}
+<section class="relative py-24 bg-[#050814] overflow-hidden">
+    <!-- gradient wash -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#091529] via-[#050814] to-[#02040a] opacity-95"></div>
+    <!-- soft glows -->
+    <div class="absolute -top-16 left-12 w-72 h-72 rounded-full bg-cyan-400/15 blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-[26rem] h-[26rem] rounded-full bg-amber-300/12 blur-3xl"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6">
+        <!-- heading -->
+        <div class="mb-12 md:mb-16">
+            <p class="text-xs tracking-[0.28em] uppercase text-slate-400 mb-3">
+                Your unfair advantage
+            </p>
+            <h2 class="text-3xl md:text-4xl font-semibold text-slate-50 leading-tight mb-3">
+                What Makes Us Different
+            </h2>
+            <p class="text-sm md:text-base text-slate-300/90 max-w-2xl">
+                Most consultants hand you a plan and disappear. We stay for the messy middle:
+                the execution, the refinement, and the compounding results.
+            </p>
+        </div>
+
+        <!-- differentiator cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for diff in differentiators %}
+            <div class="relative bg-white/5 border border-white/10 rounded-3xl
+                        backdrop-blur-md p-7 md:p-8
+                        shadow-[0_22px_70px_rgba(15,23,42,0.9)]
+                        hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(15,23,42,1)]
+                        transition-all duration-300
+                        {% if forloop.counter == 5 %}md:col-span-2 lg:col-span-2 lg:col-start-2{% endif %}">
+
+                <!-- numbered corner -->
+                <div class="absolute -top-3 left-6 inline-flex items-center gap-1 rounded-full
+                            bg-slate-900/90 border border-white/10 px-3 py-1 text-[11px] font-medium
+                            text-slate-200/90 uppercase tracking-[0.14em]">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                    <span>0{{ forloop.counter }}</span>
+                </div>
+
+                <!-- icon -->
+                {% if diff.icon %}
+                <div class="mb-6">
+                    <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl
+                                bg-gradient-to-br from-cyan-400/18 to-blue-500/25
+                                border border-cyan-300/40 text-cyan-100">
+                        <i class="{{ diff.icon }} text-lg"></i>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- title & copy -->
+                <h3 class="text-xl font-semibold text-slate-50 mb-3 leading-snug">
+                    {{ diff.title }}
+                </h3>
+                <p class="text-sm md:text-base text-slate-200/90 leading-relaxed">
+                    {{ diff.description }}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
