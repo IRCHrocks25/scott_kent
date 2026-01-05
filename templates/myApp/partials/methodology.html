@@ -1,9 +1,9 @@
 {% if methodology_steps %}
-<section class="py-20 bg-gradient-to-b from-white to-slate-50/70">
+<section class="py-20 bg-gradient-to-b from-white to-slate-50/70 animate-on-scroll">
     <div class="max-w-5xl mx-auto px-6">
 
         <!-- Header -->
-        <div class="text-center mb-14">
+        <div class="text-center mb-14 animate-on-scroll" data-stagger="0">
             <p class="text-xs font-semibold tracking-[0.25em] uppercase text-slate-400 mb-3">
                 The system behind your success
             </p>
@@ -18,7 +18,7 @@
         <!-- Timeline -->
         <div class="space-y-10">
             {% for step in methodology_steps %}
-            <div class="relative flex gap-6 md:gap-8">
+            <div class="relative flex gap-6 md:gap-8 animate-on-scroll methodology-step" data-stagger="{{ forloop.counter0 }}">
 
                 <!-- Step marker + line -->
                 <div class="flex flex-col items-center">
@@ -35,7 +35,10 @@
                 <div class="flex-1">
                     <div class="bg-white rounded-2xl border border-slate-200/80
                                 shadow-[0_18px_60px_rgba(15,23,42,0.10)]
-                                px-6 py-6 md:px-8 md:py-7">
+                                hover:shadow-[0_24px_80px_rgba(15,23,42,0.15)]
+                                hover:-translate-y-1 hover:border-cyan-400/30
+                                transition-all duration-500 ease-out
+                                px-6 py-6 md:px-8 md:py-7 card">
                         <p class="text-xs font-semibold tracking-[0.18em] uppercase text-slate-400 mb-2">
                             Step {{ forloop.counter }}
                         </p>

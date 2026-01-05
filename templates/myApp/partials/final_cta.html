@@ -1,5 +1,5 @@
 {% if final_cta.show_section %}
-<section class="relative py-28 md:py-36 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-center overflow-hidden">
+<section class="relative py-28 md:py-36 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-center overflow-hidden animate-on-scroll">
     
     <!-- Background glow effects -->
     <div class="absolute -top-20 left-1/4 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full"></div>
@@ -8,24 +8,24 @@
     <div class="relative max-w-4xl mx-auto px-6 z-10">
 
         <!-- Overline -->
-        <p class="text-xs font-semibold tracking-[0.26em] uppercase text-cyan-300/90 mb-6">
+        <p class="text-xs font-semibold tracking-[0.26em] uppercase text-cyan-300/90 mb-6 animate-on-scroll" data-stagger="0">
             Your next move
         </p>
 
         <!-- Headline -->
-        <h2 class="text-4xl md:text-6xl font-bold mb-10 text-white leading-tight max-w-3xl mx-auto" style="text-shadow: 0 4px 12px rgba(0,0,0,0.6);">
+        <h2 class="text-4xl md:text-6xl font-bold mb-10 text-white leading-tight max-w-3xl mx-auto animate-on-scroll" style="text-shadow: 0 4px 12px rgba(0,0,0,0.6);" data-stagger="1">
             {{ final_cta.headline }}
         </h2>
 
         <!-- Subcopy with better formatting -->
         {% if final_cta.body_text %}
-        <div class="text-lg md:text-xl text-white/95 mb-14 max-w-2xl mx-auto leading-relaxed space-y-6" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5); color: #ffffff !important;">
+        <div class="text-lg md:text-xl text-white/95 mb-14 max-w-2xl mx-auto leading-relaxed space-y-6 animate-on-scroll" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5); color: #ffffff !important;" data-stagger="2">
             {{ final_cta.body_text|linebreaks }}
         </div>
         {% endif %}
 
         <!-- Signature CTA with enhanced design -->
-        <div class="flex flex-col items-center gap-6 mb-4">
+        <div class="flex flex-col items-center gap-6 mb-4 animate-on-scroll" data-stagger="3">
             <a href="{{ final_cta.cta_url }}"
                class="group relative inline-flex items-center justify-center gap-3
                       rounded-full px-12 md:px-16 py-5 md:py-5.5

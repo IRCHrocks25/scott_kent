@@ -1,9 +1,9 @@
 {% if services %}
-<section class="py-20 bg-[#f5f5fb]">
+<section class="py-20 bg-[#f5f5fb] animate-on-scroll">
     <div class="max-w-6xl mx-auto px-6">
 
         <!-- header -->
-        <div class="text-center mb-12">
+        <div class="text-center mb-12 animate-on-scroll" data-stagger="0">
             <p class="text-xs tracking-[0.25em] uppercase text-slate-400 mb-3">
                 Your path to profit &amp; peace of mind
             </p>
@@ -23,8 +23,9 @@
                         border border-slate-200/80
                         shadow-[0_24px_60px_rgba(15,23,42,0.08)]
                         hover:shadow-[0_26px_80px_rgba(15,23,42,0.16)]
-                        hover:-translate-y-1.5 hover:border-cyan-400/70
-                        transition-all duration-300 p-8 flex flex-col">
+                        hover:-translate-y-2 hover:border-cyan-400/70 hover:scale-[1.02]
+                        transition-all duration-500 ease-out p-8 flex flex-col animate-on-scroll card"
+                        data-stagger="{{ forloop.counter0 }}">
 
                 <!-- top accent pill -->
                 <div class="absolute right-7 -top-3">
