@@ -1,63 +1,72 @@
+{% load static %}
 {% if about.show_section %}
-<section class="py-24 md:py-32 bg-gradient-to-b from-white to-slate-50/70 animate-on-scroll">
-    <div class="max-w-5xl mx-auto px-6">
+<section id="about" class="py-32 md:py-40 bg-gradient-to-b from-white to-slate-50/50 animate-on-scroll">
+    <div class="max-w-7xl mx-auto px-6">
 
-        <!-- Row 1: Intro Hero (text-only) -->
-        <div class="mb-16 md:mb-20 animate-on-scroll" data-stagger="0">
-            <p class="text-xs font-semibold tracking-[0.22em] uppercase text-slate-400 mb-3">
-                About
-            </p>
-            <h2 class="text-3xl md:text-5xl font-semibold text-slate-900 leading-tight mb-4 max-w-2xl">
-                {{ about.headline }}
-            </h2>
-            <div class="w-12 h-[3px] rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 mb-6"></div>
-
-            <div class="max-w-xl text-lg md:text-xl text-slate-600 leading-relaxed space-y-4">
-                <p>We're not consultants who only preach from a whiteboard. We're founders who have lived the grind and built the systems to escape it.</p>
-                <p>Our work exists to give other founders that same freedom.</p>
-            </div>
-        </div>
-
-        <!-- Row 2: Founders Story (text + image) -->
-        <div class="grid md:grid-cols-2 gap-12 md:gap-16 mb-20 md:mb-24 items-start animate-on-scroll" data-stagger="1">
-            <!-- Left: Story text -->
-            <div class="max-w-md">
-                <p class="text-xs font-semibold tracking-[0.2em] uppercase text-slate-400 mb-4">
-                    Built by founders, not theorists
+        <!-- Premium Two-Column Layout -->
+        <div class="grid md:grid-cols-2 gap-16 md:gap-20 lg:gap-24 mb-24 md:mb-32 items-start animate-on-scroll" data-stagger="0">
+            
+            <!-- Left Column: Copy -->
+            <div class="space-y-8">
+                <!-- Label -->
+                <p class="text-[10px] font-semibold tracking-[0.3em] uppercase text-slate-400">
+                    About
                 </p>
-                <div class="space-y-5 text-base text-slate-700 leading-relaxed">
-                    <p>We're Scott and Shannon Kent, a husband-and-wife team who know what it feels like to face a business-defining moment.</p>
-                    <p>We transformed a declining printing business into a future-proof consultancy and, in the process, gained something invaluable: the time to build smarter systems.</p>
-                    <p>Now we give that same clarity and freedom to other founders—so they can lead their business by design, not by default.</p>
+                
+                <!-- Headline -->
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 leading-[1.1] tracking-tight">
+                    {{ about.headline }}
+                </h2>
+                
+                <!-- Intro Text -->
+                <div class="space-y-6 pt-2">
+                    <p class="text-xl md:text-2xl text-slate-700 leading-relaxed font-light">
+                        We're not consultants who only preach from a whiteboard. We're founders who have lived the grind and built the systems to escape it.
+                    </p>
+                    <p class="text-xl md:text-2xl text-slate-700 leading-relaxed font-light">
+                        Our work exists to give other founders that same freedom.
+                    </p>
+                </div>
+                
+                <!-- Divider -->
+                <div class="w-16 h-[2px] rounded-full bg-gradient-to-r from-slate-300 to-slate-200 mt-8"></div>
+                
+                <!-- Story Section -->
+                <div class="space-y-6 pt-4">
+                    <p class="text-[10px] font-semibold tracking-[0.25em] uppercase text-slate-400">
+                        Built by founders, not theorists
+                    </p>
+                    <div class="space-y-6 text-lg md:text-xl text-slate-700 leading-relaxed">
+                        <p>We're Scott and Shannon Kent, a husband-and-wife team who know what it feels like to face a business-defining moment.</p>
+                        <p>We transformed a declining printing business into a future-proof consultancy and, in the process, gained something invaluable: the time to build smarter systems.</p>
+                        <p>Now we give that same clarity and freedom to other founders—so they can lead their business by design, not by default.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Right: Image -->
+            <!-- Right Column: Hero Image Feature -->
             <div class="relative">
-                <div class="bg-gradient-to-br from-cyan-300/40 via-sky-300/30 to-blue-400/40 rounded-[28px] p-[3px] shadow-[0_22px_70px_rgba(15,23,42,0.18)]">
-                    <div class="rounded-[24px] overflow-hidden bg-slate-100">
-                        {% if about.image %}
-                            <img src="{{ about.image.url }}"
-                                 alt="{{ about.image_alt_text|default:'Scott & Shannon Kent' }}"
-                                 class="w-full h-auto object-cover">
-                        {% else %}
-                            <div class="h-96 flex items-center justify-center">
-                                <i class="fas fa-users text-5xl text-slate-300"></i>
-                            </div>
-                        {% endif %}
-                    </div>
+                <!-- Image Container -->
+                <div class="rounded-[24px] overflow-hidden bg-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.12)] border border-slate-200/50">
+                    {% if about.image %}
+                        <img src="{{ about.image.url }}"
+                             alt="{{ about.image_alt_text|default:'Scott & Shannon Kent' }}"
+                             class="w-full h-auto object-cover">
+                    {% else %}
+                        <img src="{% static 'images/about image.png' %}"
+                             alt="Scott & Shannon Kent"
+                             class="w-full h-auto object-cover">
+                    {% endif %}
                 </div>
-                <!-- Caption chip -->
-                <div class="absolute -bottom-5 left-6">
-                    <div class="inline-flex flex-col items-start rounded-2xl bg-white px-4 py-3
-                                border border-slate-200 shadow-[0_8px_30px_rgba(15,23,42,0.14)]">
-                        <p class="text-sm font-semibold text-slate-900">
-                            Scott &amp; Shannon Kent
-                        </p>
-                        <p class="text-xs text-slate-500">
-                            AI Profit Architects &amp; Growth Partners
-                        </p>
-                    </div>
+                
+                <!-- Caption Bar (Below Image) -->
+                <div class="mt-6 px-6 py-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200/60 shadow-[0_4px_20px_rgba(15,23,42,0.08)]">
+                    <p class="text-base font-semibold text-slate-900 mb-1">
+                        Scott &amp; Shannon Kent
+                    </p>
+                    <p class="text-sm text-slate-600">
+                        AI Profit Architects &amp; Growth Partners
+                    </p>
                 </div>
             </div>
         </div>
@@ -115,42 +124,49 @@
             </div>
         </div>
 
-        <!-- Row 4: Beliefs / Principles -->
-        <div class="mb-16 animate-on-scroll" data-stagger="3">
-            <h3 class="text-xl md:text-2xl font-semibold text-slate-900 mb-6 text-center">
-                How we think about growth
-            </h3>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="animate-on-scroll hover:translate-y-[-4px] transition-all duration-300" data-stagger="0">
-                    <h4 class="text-sm font-semibold text-slate-900 mb-2 uppercase tracking-[0.14em]">
-                        Systems First
-                    </h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Every system we design serves your growth, not a vendor's agenda. We start with your business needs, then build the infrastructure that scales.
-                    </p>
-                </div>
-                <div class="animate-on-scroll hover:translate-y-[-4px] transition-all duration-300" data-stagger="1">
-                    <h4 class="text-sm font-semibold text-slate-900 mb-2 uppercase tracking-[0.14em]">
-                        Founder Freedom
-                    </h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        We're not just optimizing systems—we're freeing founders to lead their life and business by design, not by default. Time back is the real ROI.
-                    </p>
-                </div>
-                <div class="animate-on-scroll hover:translate-y-[-4px] transition-all duration-300" data-stagger="2">
-                    <h4 class="text-sm font-semibold text-slate-900 mb-2 uppercase tracking-[0.14em]">
-                        Compounding ROI
-                    </h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        The best systems compound. They save time today, generate profit tomorrow, and create confidence that scales. That's the growth engine.
-                    </p>
-                </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- How We Think About Growth - Standalone Section -->
+<section class="relative py-32 overflow-hidden" style="background-image: url('{% static 'images/sco (1).png' %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="relative max-w-6xl mx-auto px-6 z-10">
+        <!-- Headline -->
+        <h3 class="text-3xl md:text-4xl font-medium text-white mb-16 text-center">
+            How we think about growth
+        </h3>
+        
+        <!-- Three Principles -->
+        <div class="grid md:grid-cols-3 gap-12 lg:gap-16 mb-20">
+            <div>
+                <h4 class="text-base font-medium text-white mb-4 uppercase tracking-[0.12em]">
+                    Systems First
+                </h4>
+                <p class="text-base text-white leading-relaxed">
+                    Every system we design serves your growth, not a vendor's agenda. We start with your business needs, then build the infrastructure that scales.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-base font-medium text-white mb-4 uppercase tracking-[0.12em]">
+                    Founder Freedom
+                </h4>
+                <p class="text-base text-white leading-relaxed">
+                    We're not just optimizing systems—we're freeing founders to lead their life and business by design, not by default. Time back is the real ROI.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-base font-medium text-white mb-4 uppercase tracking-[0.12em]">
+                    Compounding ROI
+                </h4>
+                <p class="text-base text-white leading-relaxed">
+                    The best systems compound. They save time today, generate profit tomorrow, and create confidence that scales. That's the growth engine.
+                </p>
             </div>
         </div>
-
-        <!-- Row 5: Gentle CTA -->
+        
+        <!-- CTA Area -->
         <div class="text-center max-w-2xl mx-auto">
-            <p class="text-lg text-slate-700 mb-5 leading-relaxed">
+            <p class="text-lg text-white mb-8 leading-relaxed">
                 If this resonates, we'd love to hear where your business is right now.
             </p>
             <a href="#"
@@ -166,7 +182,5 @@
                 <span>Meet with Scott &amp; Shannon</span>
             </a>
         </div>
-
     </div>
 </section>
-{% endif %}

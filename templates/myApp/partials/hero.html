@@ -1,5 +1,6 @@
+{% load static %}
 {% if hero.show_section %}
-<section class="relative overflow-hidden bg-black py-28 animate-on-scroll">
+<section class="relative overflow-hidden bg-black py-28 animate-on-scroll" style="background-image: url('{% static 'images/sco.png' %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
 
     <!-- background image -->
     {% if hero.image %}

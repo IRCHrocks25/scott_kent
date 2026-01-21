@@ -123,8 +123,11 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (for Django admin only - using Tailwind CDN for frontend)
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 # Media files (Images, uploads)
 MEDIA_URL = 'media/'

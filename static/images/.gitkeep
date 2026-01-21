@@ -1,0 +1,6 @@
+# Place your image files in this directory
+# Example: logo.png, hero-image.jpg, etc.
+# 
+# In your templates, use Django's static tag to reference images:
+# {% load static %}
+# <img src="{% static 'images/logo.png' %}" alt="Logo">

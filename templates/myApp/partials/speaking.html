@@ -1,6 +1,8 @@
+{% load static %}
 {% if speaking.show_section %}
-<section class="py-24 md:py-28 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 animate-on-scroll">
-    <div class="max-w-6xl mx-auto px-6">
+<section class="relative py-24 md:py-28 overflow-hidden animate-on-scroll" style="background-image: url('{% static 'images/ballcrystal.png' %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/85 to-slate-950/90"></div>
+    <div class="relative max-w-6xl mx-auto px-6 z-10">
 
         <!-- Header -->
         <div class="text-center mb-12 md:mb-14 animate-on-scroll" data-stagger="0">
@@ -33,9 +35,8 @@
                             <img src="{{ speaking.image.url }}" alt="Speaking"
                                  class="w-full h-full object-cover">
                         {% else %}
-                            <div class="h-64 md:h-72 flex items-center justify-center">
-                                <i class="fas fa-microphone text-4xl text-slate-500/70"></i>
-                            </div>
+                            <img src="{% static 'images/abstract.png' %}" alt="Speaking & Transformation"
+                                 class="w-full h-64 md:h-72 object-cover">
                         {% endif %}
                     </div>
 
