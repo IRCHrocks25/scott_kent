@@ -6,7 +6,7 @@
 
     <!-- soft glows -->
     <div class="absolute -top-10 left-10 w-72 h-72 bg-rose-400/15 blur-3xl rounded-full"></div>
-    <div class="absolute bottom-0 right-0 w-[26rem] h-[26rem] bg-emerald-300/15 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-[26rem] h-[26rem] bg-[#1e3a5f]/15 blur-3xl rounded-full"></div>
 
     <div class="relative max-w-7xl mx-auto px-6">
 
@@ -30,8 +30,8 @@
             <div class="text-sm uppercase tracking-[0.2em] text-rose-300/80">
                 Cost of Staying Stuck
             </div>
-            <div class="hidden md:block h-px flex-1 bg-gradient-to-r from-rose-400/40 via-slate-500/20 to-emerald-300/40"></div>
-            <div class="text-sm uppercase tracking-[0.2em] text-emerald-300/80 text-right">
+            <div class="hidden md:block h-px flex-1 bg-gradient-to-r from-rose-400/40 via-slate-500/20 to-sky-400/40"></div>
+            <div class="text-sm uppercase tracking-[0.2em] text-sky-400/80 text-right">
                 Payoff of Moving Forward
             </div>
         </div>
@@ -40,10 +40,14 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
 
             {% for stat in pain_points.stats.all %}
-            <div class="relative rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md p-8
-                        shadow-xl shadow-black/40 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/60 hover:bg-white/8
+            <div class="group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md p-8
+                        shadow-xl shadow-black/40 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-black/60 hover:bg-white/8
+                        hover:border-sky-300/40 hover:ring-2 hover:ring-sky-300/25
                         transition-all duration-500 ease-out animate-on-scroll stat-card card"
                         data-stagger="{{ forloop.counter0 }}">
+                
+                <!-- Animated glow pulse overlay - unified sky blue for all cards -->
+                <div class="absolute inset-0 rounded-3xl pointer-events-none ring-2 ring-sky-400/10 group-hover:ring-sky-300/25 group-hover:animate-[pulse_2.8s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 <!-- number + icon -->
                 <div class="flex items-center gap-4 mb-5">
@@ -62,12 +66,12 @@
                 </p>
 
                 {% if stat.result %}
-                <!-- payoff band -->
-                <div class="mt-3 rounded-2xl bg-emerald-400/10 border border-emerald-300/25 px-4 py-3 flex items-start gap-3">
-                    <div class="mt-1 text-emerald-300">
+                <!-- payoff band - unified lighter sky-blue glass for all cards -->
+                <div class="mt-3 rounded-2xl bg-sky-400/20 backdrop-blur-md border border-sky-300/25 ring-1 ring-white/5 px-4 py-3 flex items-start gap-3 group-hover:bg-sky-400/30 group-hover:border-sky-300/40 group-hover:-translate-y-[1px] group-hover:shadow-lg transition-all duration-300 ease-out">
+                    <div class="mt-1 text-white/90">
                         <i class="fas fa-arrow-trend-up"></i>
                     </div>
-                    <p class="text-sm md:text-base text-emerald-100 leading-relaxed">
+                    <p class="text-sm md:text-base text-white/95 leading-relaxed">
                         {{ stat.result }}
                     </p>
                 </div>
@@ -96,13 +100,13 @@
         </div>
         {% endif %}
 
-        <!-- CTA: this is the “do something about it” moment -->
+        <!-- CTA: this is the "do something about it" moment -->
         <div class="text-center">
             <a href="{{ pain_points.primary_button_url }}"
                class="inline-flex px-10 py-4 rounded-full font-semibold text-white
-                      bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600
-                      shadow-[0_0_25px_rgba(56,189,248,0.4)]
-                      hover:shadow-[0_0_40px_rgba(56,189,248,0.7)]
+                      bg-[#1e3a5f]
+                      shadow-[0_0_25px_rgba(30,58,95,0.4)]
+                      hover:shadow-[0_0_40px_rgba(30,58,95,0.6)]
                       hover:scale-[1.02] transition-all duration-300">
                 {{ pain_points.primary_button_label|cut:"👉" }}
             </a>

@@ -1,5 +1,5 @@
 {% if final_cta.show_section %}
-<section class="relative py-28 md:py-36 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-center overflow-hidden animate-on-scroll">
+<section class="relative py-16 md:py-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-center overflow-hidden animate-on-scroll">
     
     <!-- Background glow effects -->
     <div class="absolute -top-20 left-1/4 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full"></div>
@@ -8,37 +8,37 @@
     <div class="relative max-w-4xl mx-auto px-6 z-10">
 
         <!-- Overline -->
-        <p class="text-[10px] font-semibold tracking-[0.3em] uppercase text-slate-400 mb-10 animate-on-scroll" data-stagger="0">
+        <p class="text-[10px] font-semibold tracking-[0.3em] uppercase text-slate-400 mb-6 animate-on-scroll" data-stagger="0">
             Your next move
         </p>
 
         <!-- Headline -->
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-16 text-white leading-[1.15] tracking-tight max-w-2xl mx-auto animate-on-scroll" style="text-shadow: 0 4px 12px rgba(0,0,0,0.6);" data-stagger="1">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-10 text-white leading-[1.15] tracking-tight mx-auto animate-on-scroll whitespace-nowrap" style="text-shadow: 0 4px 12px rgba(0,0,0,0.6);" data-stagger="1">
             {{ final_cta.headline }}
         </h2>
 
         <!-- Subcopy - refined spacing and rhythm -->
         {% if final_cta.body_text %}
-        <div class="text-base md:text-lg text-white/90 mb-20 max-w-xl mx-auto leading-relaxed animate-on-scroll" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);" data-stagger="2">
+        <div class="text-base md:text-lg text-white/90 mb-12 max-w-xl mx-auto leading-relaxed animate-on-scroll" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);" data-stagger="2">
             {% if "Your competitors aren't waiting" in final_cta.body_text %}
                 <!-- First paragraph: Urgency -->
-                <p class="mb-8 text-base md:text-lg text-white/95 leading-relaxed">
+                <p class="mb-5 text-base md:text-lg text-white/95 leading-relaxed">
                     Your competitors aren't waiting and neither should you. Every day you delay fixing broken systems, you lose time and money to competitors who are already scaling smart.
                 </p>
                 
                 <!-- Second paragraph: Diagnostic value -->
-                <p class="mb-12 text-base md:text-lg text-white/90 leading-relaxed max-w-lg mx-auto">
+                <p class="mb-8 text-base md:text-lg text-white/90 leading-relaxed max-w-lg mx-auto">
                     One diagnostic today can reveal the leaks, bottlenecks, and opportunities shaping your future growth.
                 </p>
+            {% elif "Are you" in final_cta.body_text and "Growth shouldn't" in final_cta.body_text %}
+                <!-- First paragraph: Problem / Emotional tension -->
+                <p class="mb-8 text-base md:text-lg text-white/95 leading-relaxed">
+                    Are you experiencing overwhelm, frustration, and burnout trying to stay ahead of your competitors? We will design tools and systems that will free you from the emotional stress your business is causing you.
+                </p>
                 
-                <!-- Quote: Intentional pause -->
-                <blockquote class="mb-12 text-lg md:text-xl text-white/85 italic font-light leading-relaxed border-l-2 border-slate-600/50 pl-6 max-w-lg mx-auto">
-                    "Nobody ever succeeds by waiting for the right time." — Scott & Shannon Kent
-                </blockquote>
-                
-                <!-- Final paragraph: Closing assurance -->
-                <p class="text-base md:text-lg text-slate-300/90 leading-relaxed">
-                    We'll show you where your systems drag, where profit is leaking, and how the Enterprise Growth Engine™ can fix it.
+                <!-- Second paragraph: Reframe / Insight -->
+                <p class="text-base md:text-lg text-white/85 leading-relaxed">
+                    Growth shouldn't feel heavier the bigger you get. Most founder-led businesses hit a ceiling when their systems fall behind. It's not your effort that's holding you back; it's the way your business systems operate.
                 </p>
             {% else %}
                 <!-- Fallback: Use linebreaks if structure is different -->
@@ -48,12 +48,12 @@
         {% endif %}
 
         <!-- Signature CTA with enhanced design -->
-        <div class="flex flex-col items-center gap-6 mb-4 animate-on-scroll pt-4" data-stagger="3">
+        <div class="flex flex-col items-center gap-4 mb-4 animate-on-scroll pt-2" data-stagger="3">
             <a href="{{ final_cta.cta_url }}"
                class="group relative inline-flex items-center justify-center gap-3
-                      rounded-full px-12 md:px-16 py-5 md:py-5.5
-                      text-base md:text-lg font-bold
-                      text-white
+                      rounded-full px-10 md:px-14 py-4 md:py-4.5
+                      text-sm md:text-base font-bold
+                      text-white whitespace-nowrap
                       bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600
                       shadow-[0_0_40px_rgba(56,189,248,0.6)]
                       hover:shadow-[0_0_60px_rgba(56,189,248,0.9)]

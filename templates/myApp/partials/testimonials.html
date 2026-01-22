@@ -1,0 +1,43 @@
+{% if credibility.testimonials.all %}
+<section id="testimonials" class="relative py-32 bg-gradient-to-b from-white to-slate-50/40">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <p class="text-[10px] font-medium tracking-widest uppercase text-slate-500 mb-6">
+                CLIENT RESULTS
+            </p>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-800 tracking-tight mb-5 leading-tight">
+                Proven results from focused, scalable systems
+            </h2>
+            <p class="text-base md:text-lg text-slate-600/90 max-w-2xl mx-auto leading-relaxed font-light">
+                What founders achieve when complexity is replaced with clarity.
+            </p>
+        </div>
+
+        <!-- Testimonial Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for testimonial in credibility.testimonials.all|slice:":3" %}
+            <div class="bg-white border border-slate-200/60 rounded-2xl p-8 h-full flex flex-col shadow-sm hover:border-primary/20 transition-colors duration-300">
+                <p class="text-slate-700 leading-relaxed mb-6 text-base flex-1">
+                    "{{ testimonial.quote }}"
+                </p>
+                
+                <div class="space-y-1 pt-4 border-t border-primary/10">
+                    <p class="text-slate-900 font-medium text-sm">
+                        {{ testimonial.author }}
+                    </p>
+                    {% if testimonial.role %}
+                    <p class="text-xs text-slate-500">
+                        {{ testimonial.role }}{% if testimonial.location %} • {{ testimonial.location }}{% endif %}
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+{% endif %}
+

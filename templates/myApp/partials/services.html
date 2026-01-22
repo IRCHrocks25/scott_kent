@@ -7,7 +7,7 @@
             <p class="text-xs tracking-[0.25em] uppercase text-slate-400 mb-3">
                 Your path to profit &amp; peace of mind
             </p>
-            <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 leading-tight">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 mb-4 leading-tight">
                 Services &amp; Offerings
             </h2>
             <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -34,7 +34,17 @@
                                 text-slate-50 shadow-[0_10px_25px_rgba(15,23,42,0.35)]
                                 group-hover:bg-slate-800 transition-colors">
                         <span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-                        <span>High-impact</span>
+                        <span>
+                            {% if forloop.counter == 1 %}
+                                Best for Beginners
+                            {% elif forloop.counter == 2 %}
+                                High-impact
+                            {% elif forloop.counter == 3 %}
+                                Advanced
+                            {% else %}
+                                High-impact
+                            {% endif %}
+                        </span>
                     </div>
                 </div>
 
@@ -70,39 +80,22 @@
             {% endfor %}
         </div>
 
-        <!-- signature CTA strip with unique button -->
-        <div class="max-w-4xl mx-auto">
-            <div class="rounded-[32px] border border-cyan-300/60 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.12)]
-                        px-8 py-6 md:px-10 md:py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                
-                <div class="text-center md:text-left">
-                    <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500 mb-1">
-                        Ready when you are
-                    </p>
-                    <p class="text-sm md:text-base text-slate-800 leading-relaxed">
-                        Pick the service that fits your stage. We’ll turn it into reclaimed hours,
-                        cleaner systems, and measurable, compounding profit.
-                    </p>
-                </div>
-        
-                <div class="text-center md:text-right">
-                    <a href="#"
-                       class="inline-flex items-center justify-center gap-2
-                              px-8 md:px-10 py-3 rounded-full
-                              text-sm md:text-base font-semibold
-                              bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600
-                              text-white shadow-[0_0_25px_rgba(56,189,248,0.45)]
-                              hover:shadow-[0_0_40px_rgba(56,189,248,0.75)]
-                              hover:scale-[1.03] active:scale-[0.99]
-                              transition-all duration-300">
-                        <span>Start Your Path to Profit Today</span>
-                        <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15">
-                            <i class="fas fa-arrow-right text-[11px]"></i>
-                        </span>
-                    </a>
-                </div>
-        
-            </div>
+        <!-- signature CTA button -->
+        <div class="max-w-4xl mx-auto text-center">
+            <a href="#"
+               class="inline-flex items-center justify-center gap-2
+                      px-8 md:px-10 py-3 rounded-full
+                      text-sm md:text-base font-semibold
+                      bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600
+                      text-white shadow-[0_0_25px_rgba(56,189,248,0.45)]
+                      hover:shadow-[0_0_40px_rgba(56,189,248,0.75)]
+                      hover:scale-[1.03] active:scale-[0.99]
+                      transition-all duration-300">
+                <span>Start Your Path to Profit Today</span>
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15">
+                    <i class="fas fa-arrow-right text-[11px]"></i>
+                </span>
+            </a>
         </div>
         
 
