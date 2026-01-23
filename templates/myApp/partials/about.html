@@ -1,7 +1,13 @@
 {% load static %}
 {% if about.show_section %}
-<section id="about" class="py-14 lg:py-20 bg-gradient-to-b from-white to-slate-50/50 animate-on-scroll">
-    <div class="max-w-7xl mx-auto px-6">
+<section id="about" class="relative py-14 lg:py-20 bg-gradient-to-b from-white via-slate-50/30 to-white animate-on-scroll overflow-hidden">
+    <!-- Soft gradient texture overlays -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-50/40 blur-3xl rounded-full opacity-60"></div>
+    <div class="absolute bottom-0 right-1/4 w-[28rem] h-[28rem] bg-indigo-50/30 blur-3xl rounded-full opacity-50"></div>
+    <div class="absolute top-1/2 left-0 w-72 h-72 bg-cyan-50/20 blur-3xl rounded-full opacity-40"></div>
+    <div class="absolute top-1/3 right-0 w-80 h-80 bg-slate-100/30 blur-3xl rounded-full opacity-50"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-6 z-10">
 
         <!-- Premium Single-Column Editorial Layout -->
         <div class="flex flex-col mb-12 md:mb-14 animate-on-scroll" data-stagger="0">
@@ -33,7 +39,7 @@
                 
                 <!-- Story Section -->
                 <div class="space-y-4 pt-4">
-                    <p class="text-[10px] font-semibold tracking-[0.25em] uppercase text-slate-400">
+                    <p class="text-base md:text-lg font-semibold tracking-[0.25em] uppercase text-slate-400">
                         Built by founders, not theorists
                     </p>
                     <div class="space-y-4 text-lg md:text-xl text-slate-700 leading-relaxed">
@@ -45,7 +51,7 @@
             </div>
 
             <!-- Image Block (placed directly after the paragraph) -->
-            <div class="relative overflow-hidden rounded-3xl w-full h-[360px] sm:h-[460px] lg:h-[560px] ring-1 ring-black/10 shadow-[0_20px_60px_rgba(0,0,0,0.10)] mt-8">
+            <div class="relative overflow-hidden rounded-xl w-full h-[360px] sm:h-[460px] lg:h-[560px] ring-1 ring-black/10 shadow-[0_20px_60px_rgba(0,0,0,0.10)] mt-8">
                 <!-- Gradient Overlay -->
                 <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-black/0 to-black/0 z-10"></div>
                 
@@ -61,7 +67,7 @@
                 {% endif %}
                 
                 <!-- Mini Name Card Overlay (Bottom-Left) -->
-                <div class="absolute bottom-5 left-5 z-20 rounded-2xl bg-white/85 backdrop-blur-md ring-1 ring-black/10 shadow-lg px-4 py-3 max-w-[320px]">
+                <div class="absolute bottom-5 left-5 z-20 rounded-lg bg-white/85 backdrop-blur-md ring-1 ring-black/10 shadow-lg px-4 py-3 max-w-[320px]">
                     <p class="text-slate-900 font-semibold text-sm sm:text-base leading-tight">
                         Scott &amp; Shannon Kent
                     </p>

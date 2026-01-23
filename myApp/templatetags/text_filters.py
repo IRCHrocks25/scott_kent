@@ -13,9 +13,14 @@ def split_at_colon(value):
 
 @register.filter
 def split_paragraphs(value):
-    """Split text by double newline (\n\n) and return as list"""
+    """Split text by double newline (\n\n) or single newline (\n) and return as list"""
     if not value:
         return []
-    parts = value.split('\n\n')
+    # Try double newline first
+    if '\n\n' in value:
+        parts = value.split('\n\n')
+    else:
+        # Fall back to single newline
+        parts = value.split('\n')
     return [part.strip() for part in parts if part.strip()]
 

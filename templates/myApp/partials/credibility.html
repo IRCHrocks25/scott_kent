@@ -1,10 +1,13 @@
 {% load static %}
 {% load text_filters %}
 {% if credibility.show_section %}
-<section class="relative overflow-hidden py-32 bg-slate-950" style="background-image: url('{% static 'images/abstract.png' %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<section class="relative overflow-hidden py-32 bg-black">
 
-    <!-- Soft dark gradient overlay for readability -->
-    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/85 to-slate-950/90"></div>
+    <!-- Soft dark blue gradient overlays for modern, powerful look -->
+    <div class="absolute inset-0 bg-gradient-to-br from-black via-black to-slate-900"></div>
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-900/20 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-0 right-1/4 w-[28rem] h-[28rem] bg-indigo-900/15 blur-3xl rounded-full"></div>
+    <div class="absolute top-1/2 left-0 w-72 h-72 bg-blue-800/10 blur-3xl rounded-full"></div>
 
     <div class="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
 
@@ -25,23 +28,9 @@
             <!-- RIGHT: Founders Image -->
             <div class="relative pt-8">
                 <div class="relative w-full max-w-xl mx-auto lg:max-w-none lg:w-[120%] lg:ml-auto">
-                    <img src="{% static 'images/Group 3.png' %}" 
+                    <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1769159613/kling-2.5_Two_professional_business_people_standing_side_by_side_on_a_clean_black_backgrou-0_2_jadk2a.gif" 
                          alt="Shannon and Scott Kent" 
                          class="w-full h-auto rounded-2xl object-cover">
-                    
-                    <!-- Name Labels -->
-                    <div class="absolute -bottom-10 left-0 right-0 flex justify-center gap-4">
-                        <div class="px-8 py-3.5 backdrop-blur-xl border border-white/30 rounded-xl shadow-xl shadow-black/30">
-                            <span class="text-sm font-light text-white tracking-[0.2em] uppercase">
-                                Shannon Kent
-                            </span>
-                        </div>
-                        <div class="px-8 py-3.5 backdrop-blur-xl border border-white/30 rounded-xl shadow-xl shadow-black/30">
-                            <span class="text-sm font-light text-white tracking-[0.2em] uppercase">
-                                Scott Kent
-                            </span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
