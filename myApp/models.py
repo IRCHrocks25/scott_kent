@@ -71,7 +71,7 @@ class CredibilitySection(models.Model):
     """Credibility, Expertise & Testimonials section"""
     show_section = models.BooleanField(default=True)
     
-    headline = models.CharField(max_length=200, default="Growth You Can Trust, From Founders Who've Been There")
+    headline = models.CharField(max_length=200, default="The Engine Behind Your Next Level of Growth")
     intro_paragraph = models.TextField(default="When a business looks effortless, it's because the right systems are working quietly in the background.")
     
     primary_button_label = models.CharField(max_length=100, default="Start Your Profit Reclaim Today")

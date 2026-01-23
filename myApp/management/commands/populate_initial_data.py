@@ -85,7 +85,7 @@ class Command(BaseCommand):
             id=1,
             defaults={
                 'show_section': True,
-                'headline': "Growth You Can Trust, from Founders Who've Been There",
+                'headline': "The Engine Behind Your Next Level of Growth",
                 'intro_paragraph': "When a business looks effortless, it's because the right systems are working quietly in the background.\nWe built and scaled 12+ companies ourselves. Our results come from decades of hands-on experience as founders and enterprise-level engineers. We know what it takes to build a business from scratch and the systems it needs to scale.",
                 'primary_button_label': 'Start Your Profit Reclaim Today',
                 'primary_button_url': '#',
